@@ -5,6 +5,8 @@ import React from 'react';
 
 import TodoList from './components/TodoComponents/TodoList';
 import TodoForm from './components/TodoComponents/TodoForm';
+
+
 class App extends React.Component {
 	constructor() {
 	super();
@@ -43,7 +45,7 @@ toggleTodoComplete = id => {
 			return todo;
 		}
 	});
-	this.setstate({ todos })
+	this.setState({ todos })
 };
 
 clearCompletedTodos = e => {
@@ -56,17 +58,16 @@ clearCompletedTodos = e => {
   render() {
     return (
       <div>
-				<TodoList
-					handleToggleComplete={this.toggleTodoComplete}
-					todos={this.state.todos}
-					/>
-				<TodoForm
-					value={this.state.todo}
-					handleTodoChange={this.changeTodo}
-					handleAddTodo={this.addTodo}
-					handleClearTodos={this.clearCompletedTodos}
-					/>
-        <h2>Welcome to your Todo App!</h2>
+	<TodoList
+		handleToggleComplete={this.toggleTodoComplete}
+		todos={this.state.todos}
+			/>
+	<TodoForm
+		value={this.state.todo}
+		handleTodoChange={this.changeTodo}
+		handleAddTodo={this.addTodo}
+		handleClearTodos={this.clearCompletedTodos}
+			/>
       </div>
     );
   }
